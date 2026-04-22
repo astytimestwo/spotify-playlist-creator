@@ -15,7 +15,7 @@ A robust, multi-threaded tool to discover new releases and collaborations from y
 1. **Spotify API Setup**:
    - Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
    - Create an app to get your `Client ID` and `Client Secret`.
-   - Set the Redirect URI to `http://localhost:8888/callback`.
+   - Set the Redirect URI to `http://127.0.0.1:8888/callback`.
 
 2. **Environment Variables**:
    - Copy `.env.example` to `.env`.
@@ -29,6 +29,13 @@ A robust, multi-threaded tool to discover new releases and collaborations from y
 
 ## Usage
 
+### Option 1: Using the Automator (Windows)
+Double-click **`run.bat`**. This will:
+- Help you set up your `.env` file if it's missing.
+- Ask for your start/end range and cutoff date.
+- Run the script automatically.
+
+### Option 2: Manual Run
 Run the script using Python (example below):
 
 ```bash

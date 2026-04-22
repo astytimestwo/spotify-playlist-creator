@@ -1,7 +1,7 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from spotipy.exceptions import SpotifyException
-from datetime import datetime
+from datetime import datetime, timedelta
 import time
 import logging
 import argparse
@@ -17,10 +17,10 @@ load_dotenv()
 # === CONFIG ===
 CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
 CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
-REDIRECT_URI = os.getenv('SPOTIPY_REDIRECT_URI', 'http://localhost:8888/callback')
+REDIRECT_URI = os.getenv('SPOTIPY_REDIRECT_URI', 'http://127.0.0.1:8888/callback')
 
 # Default values (can be overridden by CLI args)
-DEFAULT_CUTOFF_DATE = datetime(2025, 10, 12)
+DEFAULT_CUTOFF_DATE = datetime.now() - timedelta(days=30)
 SLEEP_BETWEEN_REQUESTS = 1.2  # Slightly lower for concurrent use
 PLAYLIST_NAME = "New Releases"
 PLAYLIST_DESCRIPTION = "New tracks from followed artists"
